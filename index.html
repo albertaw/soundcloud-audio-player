@@ -1,0 +1,37 @@
+<!Doctype html>
+<html>
+	<head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+       <link rel="stylesheet" href="audio.css">
+	</head>
+	<body>
+		
+		<div class="audio-controls">
+            <button id="previous" class="btn btn-default">previous</button>
+            <button id="play" class="btn btn-default"></span>play</button>
+            <button id="next" class="btn btn-default">next</button>
+       </div>
+      
+           
+
+        <script src="//connect.soundcloud.com/sdk.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="js/Track.js"></script>
+        <script src="js/Player.js"></script>
+        <script src="js/UI.js"></script>
+        <script type="text/javascript">
+            var track1 = new AUDIO.Track(212819310);    //getyourrap
+            var track2 = new AUDIO.Track(212818447);    //ckann
+            var track3 = new AUDIO.Track(212817991);    //babyface
+            var track4 = new AUDIO.Track(212818691);    //luplus
+            var p = AUDIO.Player;
+            p.addTrack(track1);
+            p.addTrack(track2);
+            p.addTrack(track3);
+            p.addTrack(track4);
+            p.init();
+            AUDIO.UI.init();
+        </script>
+	</body>
+</html>
