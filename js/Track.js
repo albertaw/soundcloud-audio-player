@@ -26,7 +26,7 @@ AUDIO.Track = (function () {
 		//SoundCloud authentication
 		CLIENT_ID = '3c7241fa47fff2114092adfe19081d5c',
 		options = {
-			autoload: false,
+			autoload: true,
 
 			onplay: function () {
 				isPlaying = true;
@@ -48,7 +48,7 @@ AUDIO.Track = (function () {
 
 			whileloading: function () {
 				//todo
-				//console.log('loading');
+				console.log('loading');
 			},
 
 			whileplaying: function () {
@@ -74,17 +74,13 @@ AUDIO.Track = (function () {
 		this.init = function () {
 			SC.stream('/tracks/'+ id, options, function (sound) {
 				track = sound;
-				//track.play();
 				track.load();
 			});
 		}
 
 		this.play = function () {
-			//fixes issues with next and previous track
 			SC.stream('/tracks/'+ id, options, function (sound) {
-				track = sound;
 				track.play();
-				track.load();
 			});
 		};
 
