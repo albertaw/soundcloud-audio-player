@@ -18,7 +18,10 @@ AUDIO.Player = (function () {
 		//is the current playing song looping
 		isLooping,
 		//to assign to tracks
-		nextId = 0;
+		nextId = 0,
+
+		//SoundCloud authentication
+		CLIENT_ID = config.clientId;
 		
 		function trackExists (id) {
 			if (tracks[id]) {
@@ -156,6 +159,11 @@ AUDIO.Player = (function () {
 		},
 
 		init: function () {
+
+			SC.initialize({
+				client_id: CLIENT_ID
+			});
+
 			currentTrack = tracks[0];
 			console.log('Player initiated');
 		},

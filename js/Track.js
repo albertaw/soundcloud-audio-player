@@ -1,7 +1,6 @@
 /*
 Module pattern that returns the constructor
 @param id the SoundCloud id of the track
-
 Example usage: 
 var track = new AUDIO.Track(123456);
 track.play();
@@ -23,8 +22,7 @@ AUDIO.Track = (function () {
 		isPlaying,
 		isPaused,
 		ID,	//object id
-		//SoundCloud authentication
-		CLIENT_ID = '3c7241fa47fff2114092adfe19081d5c',
+		
 		options = {
 			autoload: true,
 
@@ -73,15 +71,12 @@ AUDIO.Track = (function () {
 
 		this.init = function () {
 
-			SC.initialize({
-			client_id: CLIENT_ID
-		});
-
 			SC.stream('/tracks/'+ id, options, function (sound) {
 				track = sound;
 				track.load();
+				//track.setVolume(10);
 			});
-		}
+		};
 
 		this.play = function () {
 			SC.stream('/tracks/'+ id, options, function (sound) {
