@@ -48,7 +48,7 @@ AUDIO.Track = (function () {
 
 			whileloading: function () {
 				//todo
-				console.log('loading');
+				//console.log('loading');
 			},
 
 			whileplaying: function () {
@@ -72,6 +72,11 @@ AUDIO.Track = (function () {
 		};
 
 		this.init = function () {
+
+			SC.initialize({
+			client_id: CLIENT_ID
+		});
+
 			SC.stream('/tracks/'+ id, options, function (sound) {
 				track = sound;
 				track.load();
@@ -163,10 +168,6 @@ AUDIO.Track = (function () {
 		this.setId = function (newId) {
 			ID = newId;
 		};
-
-		SC.initialize({
-			client_id: CLIENT_ID
-		});
 
 		this.init();
 	}

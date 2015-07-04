@@ -18,14 +18,8 @@ AUDIO.Player = (function () {
 		//is the current playing song looping
 		isLooping,
 		//to assign to tracks
-		nextId = 0,
-		//get from soundcloud embed code
-		CLIENT_ID = '3c7241fa47fff2114092adfe19081d5c';
+		nextId = 0;
 		
-		SC.initialize({
-			client_id: CLIENT_ID
-		});
-
 		function trackExists (id) {
 			if (tracks[id]) {
 				return true;
