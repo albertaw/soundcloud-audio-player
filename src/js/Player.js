@@ -4,7 +4,7 @@ Manages track objects and playing songs
 
 Example usage:
 AUDIO.Player.addTrack(new AUDIO.Track(12345));
-AUDIO.Player.playPlaylist();
+AUDIO.Player.init();
 */
 
 'use strict';

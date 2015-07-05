@@ -3,26 +3,39 @@
 	<head>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-       <link rel="stylesheet" href="audio.css">
+        <link rel="stylesheet" href="audio.css">
 	</head>
 	<body>
-		
 		<div class="audio-controls">
             <button id="previous" class="btn btn-default">previous</button>
             <button id="play" class="btn btn-default"><span id="loading" class="pull-left"></span>play</button>
             <button id="next" class="btn btn-default">next</button>
        </div>
-      
-           
-
+       <h2 id="bytes">Bytes</h2>
+       <!--<div class="text-center">
+           <div class="circle"></div>
+           <div class="circle"></div>
+           <div class="circle"></div>
+           <div class="circle"></div>
+           <div class="circle"></div>
+           <div class="circle"></div>
+       </div>-->
+       <div class="navbar navbar-fixed-bottom navbar-inverse navbar-bottom">
+            <div class="container">
+                <div class="progressbar"><div class="progressbar-inner"></div></div>
+            </div>
+        </div>
         <script src="//connect.soundcloud.com/sdk.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="config.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="../config.js"></script>
 		<script src="js/Track.js"></script>
         <script src="js/Player.js"></script>
         <script src="js/UI.js"></script>
         <script type="text/javascript">
-        //console.log(conf.clientId);
+            $("#progressbar").progressbar({
+                value: 50
+            });
             var track1 = new AUDIO.Track(212819310);    //getyourrap
             var track2 = new AUDIO.Track(212818447);    //ckann
             var track3 = new AUDIO.Track(212817991);    //babyface

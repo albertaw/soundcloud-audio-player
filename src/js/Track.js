@@ -46,11 +46,14 @@ AUDIO.Track = (function () {
 
 			whileloading: function () {
 				//todo
-				//console.log('loading');
+				//this.draw();
+				
 			},
 
 			whileplaying: function () {
 				position = track.position; 
+
+				$('#bytes').text(percentBytes);
 			},
 
 	    	onfinish: function () {
@@ -61,12 +64,19 @@ AUDIO.Track = (function () {
 	    	}
 		};
 
-		this.update = function () {
+		this.percentBytes = function () {
+			var bytes = this.bytesLoaded;
+			var totalBytes = this.bytesTotal;
+			var percent = bytes/totalBytes;
+			return percent;
+		};
 
+		this.update = function () {
+		 
 		};
 
 		this.draw = function () {
-
+			$('#bytes').text(percentBytes());
 		};
 
 		this.init = function () {

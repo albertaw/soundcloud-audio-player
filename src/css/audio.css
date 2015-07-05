@@ -1,0 +1,32 @@
+.progressbar {
+	width: 100%;
+	height: 4px;
+	background-color: #333;
+	vertical-align: middle;
+	margin-top: 23px;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.progressbar-inner {
+	width: 40%;
+	height: 4px;
+	background-color: #fff;
+	border-radius: 2px;
+}
+.navbar-inverse {
+	height: 3em;
+	line-height: 3em;
+	
+}
+
+.circle {
+	display: inline-block;
+	width: 180px;
+	height: 180px;
+	border: 8px solid #000;
+	border-radius: 100%;
+	margin: 1em;
+	text-align: center;
+}
+
