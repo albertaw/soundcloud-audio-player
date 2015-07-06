@@ -40,14 +40,15 @@
 		var currTrack;
 
 		p.init();
-		p.nextTrack();
-		
-		currTrack = p.getCurrentTrack();
 
-		if (currTrack .getId() !== 1) {
-			failure = true;
-			console.error("FAILURE: test nextTrack, expected 1, got " + currTrack.getId());
-		}
+		setTimeout(function () { 
+			p.nextTrack();
+			currTrack = p.getCurrentTrack();
+			if (currTrack .getId() !== 1) {
+				failure = true;
+				console.error("FAILURE: test nextTrack, expected 1, got " + currTrack.getId());
+			}
+		}, 2000);
 		
 		setTimeout(function () {
 			p.nextTrack();

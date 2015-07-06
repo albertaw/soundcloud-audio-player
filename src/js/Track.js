@@ -95,7 +95,8 @@ AUDIO.Track = (function () {
 		};
 
 		this.cleanup = function () {
-			track.destruct();
+			track.stop();
+			track.setPosition(0);
 		};
 
 

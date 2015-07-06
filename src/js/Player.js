@@ -78,7 +78,7 @@ AUDIO.Player = (function () {
 
 		
 		playTrack: function () {
-			currentTrack.togglePause();
+			currentTrack.play();
 		},
 
 		pauseTrack: function () {
@@ -93,11 +93,15 @@ AUDIO.Player = (function () {
 			currentTrack.stop();
 		},
 
+		togglePause: function () {
+			currentTrack.togglePause();
+		},
+
 		nextTrack: function () {
 			var currentIndex = tracks.indexOf(currentTrack);
 			var nextTrack = currentIndex + 1;
 			if (hasNextTrack()) {	
-				if (currentTrack.isPlaying()) {
+				if (currentTrack) {
 					currentTrack.stop();
 				}
 				currentTrack = tracks[nextTrack];		
@@ -115,7 +119,7 @@ AUDIO.Player = (function () {
 			var currentIndex = tracks.indexOf(currentTrack);
 			var prevTrack = currentIndex - 1;
 			if (hasPreviousTrack()) {	//if we are at the beginning
-				if (currentTrack.isPlaying()) {
+				if (currentTrack) {
 					currentTrack.stop();
 				}
 				currentTrack = tracks[prevTrack];
@@ -127,6 +131,10 @@ AUDIO.Player = (function () {
 			}
 
 			//console.log('previous track');
+		},
+
+		toggleMute: function () {
+			currentTrack.toggleMute(this.id);
 		},
 
 		playPlaylist: function () {

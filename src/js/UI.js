@@ -10,32 +10,32 @@ AUDIO.UI = (function () {
 	var play = $('#play'),
 		next = $('#next'),
 		previous = $('#previous'),
-		loading = $('#loading');
+		loading = $('#loading'),
+		playToggle = $('#play-toggle');
 
 	function updatePlayButton () {
 		var track = AUDIO.Player.getCurrentTrack();
 		//if playing
-		if (!track.isPlaying()) {
-			play.text('play');
+		if (track.isPlaying()) {
+			//show pause button
+			playToggle.removeClass('fa-play');
+			playToggle.addClass('fa-pause');
 		} else {
-			play.text('pause');
+			//show play button
+			playToggle.removeClass('fa-pause');
+			playToggle.addClass('fa-play');
 		}
-	}
-
-	function showLoading() {
-		loading.addClass('fa fa-cog fa-spin');
 	}
 
 	function onPlayClicked () {
 		play.click(function () {
-
-			AUDIO.Player.playTrack();
-			
+			AUDIO.Player.togglePause();
 			updatePlayButton();
 		});
 	}
 
 	function onNextClicked () {
+
 		next.click(function () {
 			AUDIO.Player.nextTrack();
 			updatePlayButton();
@@ -48,7 +48,6 @@ AUDIO.UI = (function () {
 			updatePlayButton();
 		});
 	}
-
 
 	/* 
 	TODO
@@ -81,7 +80,6 @@ AUDIO.UI = (function () {
 	return {
 		init: init,
 		update: update,
-		showLoading: showLoading
 	}
 
 })();

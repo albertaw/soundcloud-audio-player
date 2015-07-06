@@ -1,28 +1,19 @@
 <!Doctype html>
 <html>
 	<head>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <link rel="stylesheet" href="audio.css">
+        <link rel="stylesheet" href="css/audio.css">
 	</head>
 	<body>
-		<div class="audio-controls">
-            <button id="previous" class="btn btn-default">previous</button>
-            <button id="play" class="btn btn-default"><span id="loading" class="pull-left"></span>play</button>
-            <button id="next" class="btn btn-default">next</button>
-       </div>
-       <h2 id="bytes">Bytes</h2>
-       <!--<div class="text-center">
-           <div class="circle"></div>
-           <div class="circle"></div>
-           <div class="circle"></div>
-           <div class="circle"></div>
-           <div class="circle"></div>
-           <div class="circle"></div>
-       </div>-->
+		
        <div class="navbar navbar-fixed-bottom navbar-inverse navbar-bottom">
-            <div class="container">
-                <div class="progressbar"><div class="progressbar-inner"></div></div>
+            <div class="container-fluid">
+                <div class="audio-controls col-sm-2 text-center">
+                    <span id="previous" class="previous fa fa-step-backward"></span>
+                    <span id="play" class="play"><span id="play-toggle" class="fa fa-play"></span></span>
+                    <span id="next" class="next fa fa-step-forward"></span>
+                </div>
             </div>
         </div>
         <script src="//connect.soundcloud.com/sdk.js"></script>
