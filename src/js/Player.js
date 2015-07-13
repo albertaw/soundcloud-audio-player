@@ -106,7 +106,7 @@ AUDIO.Player = (function () {
 				}
 				currentTrack = tracks[nextTrack];		
 				currentTrack.play();
-				
+				AUDIO.UI.update();
 			} else {
 				return;
 				//disable next button
@@ -127,7 +127,7 @@ AUDIO.Player = (function () {
 			
 			} else {
 				return;
-				//disable next button
+				//disable previous button
 			}
 
 			//console.log('previous track');
@@ -139,8 +139,7 @@ AUDIO.Player = (function () {
 
 		playPlaylist: function () {
 			while (hasNextTrack()) {
-				//on finish 
-				//nextTrack();
+				//TODO
 			}
 		},
 
@@ -181,7 +180,7 @@ AUDIO.Player = (function () {
 		},
 
 		draw: function () {
-
+		
 		},
 
 		cleanup: function () {

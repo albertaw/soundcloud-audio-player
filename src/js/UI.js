@@ -11,6 +11,7 @@ AUDIO.UI = (function () {
 		next = $('#next'),
 		previous = $('#previous'),
 		loading = $('#loading'),
+		title = $('#track-title'),
 		playToggle = $('#play-toggle');
 
 	function updatePlayButton () {
@@ -70,7 +71,7 @@ AUDIO.UI = (function () {
 	}
 
 	function draw () {
-
+		
 	}
 
 	function cleanup () {

@@ -8,12 +8,16 @@
 	<body>
 		
        <div class="navbar navbar-fixed-bottom navbar-inverse navbar-bottom">
-            <div class="container-fluid">
-                <div class="audio-controls col-sm-2 text-center">
-                    <span id="previous" class="previous fa fa-step-backward"></span>
-                    <span id="play" class="play"><span id="play-toggle" class="fa fa-play"></span></span>
-                    <span id="next" class="next fa fa-step-forward"></span>
+            <div class="container">
+                <div class="audio-controls nav-left">
+                    <span id="previous" class="previous control fa fa-step-backward"></span>
+                    <span id="play" class="play control "><span id="play-toggle" class="fa fa-play"></span></span>
+                    <span id="next" class="next control fa fa-step-forward"></span>
                 </div>
+                <ul class="track-info pull-right">
+                    <li><a href="#" target="_blank" id="track-title"></a></li>
+                    <!--<li><span class="fa fa-lg fa-volume-up" id="volume"></span></li>-->
+                </ul>
             </div>
         </div>
         <script src="//connect.soundcloud.com/sdk.js"></script>
@@ -24,10 +28,8 @@
         <script src="js/Player.js"></script>
         <script src="js/UI.js"></script>
         <script type="text/javascript">
-            $("#progressbar").progressbar({
-                value: 50
-            });
             var track1 = new AUDIO.Track(212819310);    //getyourrap
+
             var track2 = new AUDIO.Track(212818447);    //ckann
             var track3 = new AUDIO.Track(212817991);    //babyface
             var track4 = new AUDIO.Track(212818691);    //luplus
@@ -38,6 +40,7 @@
             p.addTrack(track4);
             p.init();
             AUDIO.UI.init();
+
         </script>
 	</body>
 </html>

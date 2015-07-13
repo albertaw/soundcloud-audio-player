@@ -11,7 +11,7 @@ An audio player that lets you stream songs from your SoundCloud account in a web
 You will need a Client ID to initialize the SDK.  First, create a SoundCloud account: https://soundcloud.com. Register a new application here: http://soundcloud.com/you/apps.  Get the Client ID of the app and replace the value of CLIENT_ID in Tracks.js with your Client ID.
 
 #### Add tracks
-This app uses songs from our SoundCloud account https://soundcloud.com/cerebromusic. Get the id of other tracks by going to the track page, click the share link, under the embed tab copy the code.  The id will be located in the src attribute after `/tracks`.
+This app uses songs from the SoundCloud account [Cerebro Music](https://soundcloud.com/cerebromusic). Get the id of other tracks by going to the track page, click the share link, and under the embed tab copy the code.  The id will be located in the src attribute after `/tracks`.
 
 
 ## Credits
